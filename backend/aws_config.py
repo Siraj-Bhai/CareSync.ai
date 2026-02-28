@@ -1,24 +1,22 @@
 import os
 import boto3
-from dotenv import load_dotenv
-
-load_dotenv()
+from secrets import get_secret
 
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
-BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID")
-S3_BUCKET = os.getenv("S3_BUCKET", "caresync-voice")
+BEDROCK_MODEL_ID = get_secret("BEDROCK_MODEL_ID")
+S3_BUCKET = get_secret("S3_BUCKET", "caresync-voice")
 
 # Separate credentials for Bedrock model calls
 _model_session = boto3.Session(
-    aws_access_key_id=os.getenv("AWS_ACCESS_KEY_MODEL"),
-    aws_secret_access_key=os.getenv("AWS_SECRET_KEY_MODEL"),
+    aws_access_key_id=get_secret("AWS_ACCESS_KEY_MODEL"),
+    aws_secret_access_key=get_secret("AWS_SECRET_KEY_MODEL"),
     region_name=AWS_REGION,
 )
 
 # General AWS session (S3, etc.)
 _aws_session = boto3.Session(
-    aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
-    aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+    aws_access_key_id=get_secret("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=get_secret("AWS_SECRET_ACCESS_KEY"),
     region_name=AWS_REGION,
 )
 

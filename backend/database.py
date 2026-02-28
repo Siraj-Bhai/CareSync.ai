@@ -1,16 +1,14 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime, timedelta, timezone
-import uuid, random, os
-from dotenv import load_dotenv
+import uuid, random
+from secrets import get_secret
 
-load_dotenv()
-
-DB_HOST = os.getenv("DB_HOST_NAME", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "caresync_ai")
-DB_USER = os.getenv("DB_USER", "postgres")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "admin123")
+DB_HOST = get_secret("DB_HOST_NAME", "localhost")
+DB_PORT = get_secret("DB_PORT", "5432")
+DB_NAME = get_secret("DB_NAME", "caresync_ai")
+DB_USER = get_secret("DB_USER", "postgres")
+DB_PASSWORD = get_secret("DB_PASSWORD", "admin123")
 
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 

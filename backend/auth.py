@@ -4,14 +4,11 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-import os
-from dotenv import load_dotenv
+from secrets import get_secret
 
-load_dotenv()
-
-SECRET_KEY = os.getenv("JWT_SECRET_KEY", "changeme")
-ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("JWT_EXPIRY_MINUTES", 1440))
+SECRET_KEY = get_secret("JWT_SECRET_KEY", "changeme")
+ALGORITHM = get_secret("JWT_ALGORITHM", "HS256")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(get_secret("JWT_EXPIRY_MINUTES", "1440"))
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")

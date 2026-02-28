@@ -1,14 +1,12 @@
 import os, httpx
-from dotenv import load_dotenv
+from secrets import get_secret
 
-load_dotenv()
-
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN", "")
-TWILIO_FROM = os.getenv("TWILIO_FROM", "")
+TWILIO_ACCOUNT_SID = get_secret("TWILIO_ACCOUNT_SID", "")
+TWILIO_AUTH_TOKEN = get_secret("TWILIO_AUTH_TOKEN", "")
+TWILIO_FROM = get_secret("TWILIO_FROM", "")
 CAL_API_KEY = os.getenv("CAL_API_KEY", "")
-URGENT_EVENT_TYPE_ID = int(os.getenv("URGENT_EVENT_TYPE_ID", 1))
-REGULAR_EVENT_TYPE_ID = int(os.getenv("REGULAR_EVENT_TYPE_ID", 2))
+URGENT_EVENT_TYPE_ID = int(os.getenv("URGENT_EVENT_TYPE_ID", "1"))
+REGULAR_EVENT_TYPE_ID = int(os.getenv("REGULAR_EVENT_TYPE_ID", "2"))
 
 CRISIS_RESOURCES = {
     "HIGH": {"hotline": "iCall: 9152987821", "text": "Text HOME to 741741"},

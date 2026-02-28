@@ -21,29 +21,11 @@
         {
           "name": "AWS_REGION",
           "value": "us-east-1"
+        },
+        {
+          "name": "SECRET_NAME",
+          "value": "backend-env"
         }
-      ],
-      "secrets": [
-        {"name": "DB_HOST_NAME", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/db-host"},
-        {"name": "DB_PORT", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/db-port"},
-        {"name": "DB_NAME", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/db-name"},
-        {"name": "DB_USER", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/db-user"},
-        {"name": "DB_PASSWORD", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/db-password"},
-        {"name": "JWT_SECRET_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/jwt-secret"},
-        {"name": "JWT_ALGORITHM", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/jwt-algorithm"},
-        {"name": "JWT_EXPIRY_MINUTES", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/jwt-expiry"},
-        {"name": "AWS_ACCESS_KEY_MODEL", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/aws-access-key-model"},
-        {"name": "AWS_SECRET_KEY_MODEL", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/aws-secret-key-model"},
-        {"name": "AWS_ACCESS_KEY_ID", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/aws-access-key-id"},
-        {"name": "AWS_SECRET_ACCESS_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/aws-secret-access-key"},
-        {"name": "BEDROCK_MODEL_ID", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/bedrock-model-id"},
-        {"name": "S3_BUCKET", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/s3-bucket"},
-        {"name": "AT_USERNAME", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/at-username"},
-        {"name": "AT_API_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/at-api-key"},
-        {"name": "AT_SENDER_ID", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/at-sender-id"},
-        {"name": "TWILIO_ACCOUNT_SID", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/twilio-account-sid"},
-        {"name": "TWILIO_AUTH_TOKEN", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/twilio-auth-token"},
-        {"name": "TWILIO_FROM", "valueFrom": "arn:aws:secretsmanager:us-east-1:610595224824:secret:mindguard/twilio-from"}
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
