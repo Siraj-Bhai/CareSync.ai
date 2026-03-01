@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sess
 from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime, timedelta, timezone
 import uuid, random
-from secrets import get_secret
+from config_secrets import get_secret
 
 DB_HOST = get_secret("DB_HOST_NAME", "localhost")
 DB_PORT = get_secret("DB_PORT", "5432")

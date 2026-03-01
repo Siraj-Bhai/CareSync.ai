@@ -1,6 +1,6 @@
 import os
 import boto3
-from secrets import get_secret
+from config_secrets import get_secret
 
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
 BEDROCK_MODEL_ID = get_secret("BEDROCK_MODEL_ID")

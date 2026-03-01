@@ -1,5 +1,5 @@
 import os, httpx
-from secrets import get_secret
+from config_secrets import get_secret
 
 TWILIO_ACCOUNT_SID = get_secret("TWILIO_ACCOUNT_SID", "")
 TWILIO_AUTH_TOKEN = get_secret("TWILIO_AUTH_TOKEN", "")
