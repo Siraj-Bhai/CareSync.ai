@@ -10,6 +10,8 @@ DB_NAME = get_secret("DB_NAME", "caresync_ai")
 DB_USER = get_secret("DB_USER", "postgres")
 DB_PASSWORD = get_secret("DB_PASSWORD", "admin123")
 
+print(f"[DB CONFIG] Host: {DB_HOST}, Port: {DB_PORT}, DB: {DB_NAME}, User: {DB_USER}")
+
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 engine = create_async_engine(DATABASE_URL, echo=False, pool_pre_ping=True)
